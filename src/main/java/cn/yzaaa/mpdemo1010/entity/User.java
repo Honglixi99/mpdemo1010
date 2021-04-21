@@ -2,6 +2,7 @@ package cn.yzaaa.mpdemo1010.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.Version;
 import lombok.Data;
 
 import java.util.Date;
@@ -21,4 +22,9 @@ public class User {
     private Date createTime;
     @TableField(fill = FieldFill.UPDATE)
     private Date updateTime;
+
+    //版本号
+    @Version
+    @TableField(fill = FieldFill.INSERT)
+    private Integer version;
 }

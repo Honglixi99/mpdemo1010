@@ -25,11 +25,20 @@ public class Mpdemo1010ApplicationTests {
     public void addUser(){
         User user = new User();
         user.setAge(28);
-        user.setName("laoba");
-        user.setEmail("123456@qq.com");
+        user.setName("xixixi");
+        user.setEmail("12345ss6@qq.com");
 
         int insert = userMapper.insert(user);
         System.out.println("insert:" + insert);
+    }
+    //测试乐观锁
+    @Test
+    public void testOptimisticLocker(){
+        //根据id查询数据
+        User user = userMapper.selectById(1384871068545196033L);
+        //进行修改
+        user.setAge(200);
+        userMapper.updateById(user);
     }
 
 }
